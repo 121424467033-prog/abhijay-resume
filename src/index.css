@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080c14;
+  --surface: #0e1626;
+  --surface-hover: #152238;
+  --surface-card: #0d1524;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #00d2ff;
+  --accent-hover: #38bdf8;
+  --accent-glow: rgba(0, 210, 255, 0.15);
+  --border: #1e293b;
+  --border-subtle: #172439;
+  --border-accent: rgba(0, 210, 255, 0.35);
+  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --grid-color: rgba(56, 189, 248, 0.06);
+}
+
+[data-theme="light"] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --surface-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+  --accent-glow: rgba(2, 132, 199, 0.12);
+  --border: #e2e8f0;
+  --border-subtle: #cbd5e1;
+  --border-accent: rgba(2, 132, 199, 0.4);
+  --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+  --grid-color: rgba(15, 23, 42, 0.05);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle data grid texture */
+.bg-tech-grid {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+.bg-tech-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, var(--grid-color) 1.5px, transparent 1.5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
